@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* GLOBAL START*/
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* GLOBAL END*/
+/* MAIN START*/
+.main__btn {
+  padding: 15px 10px;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "Open sans", "san-serif", sans-serif;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.main__btn:hover {
+  background-color: rgb(191, 3, 3);
+}
+
+/* MAIN END*/
+/* MAINS START*/
+.mains {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -100%;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.331);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.mains_main {
+  width: 30%;
+  height: 45%;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+}
+.mains_main-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.mains_main-nav h3 {
+  font-family: "Open sans", "san-serif";
+  font-size: 20px;
+}
+.mains_main-nav button {
+  border: none;
+  background-color: transparent;
+}
+.mains_main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mains_main-btn_btns {
+  padding: 10px 7px;
+  border-radius: 5px;
+  border: none;
+  background-color: green;
+  color: #fff;
+  font-family: "Open sans", "san-serif", sans-serif;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.mains_main-btn_btns:hover {
+  background-color: rgb(1, 92, 1);
+}
+
+.block {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.d-none {
+  display: none;
+}
+
+.email {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open sans", "san-serif";
+}
+.email p {
+  font-size: 15px;
+  color: rgb(153, 153, 153);
+}
+.email label {
+  font-size: 15px;
+  font-weight: 600;
+}
+.email input {
+  outline: none;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+/* MAINS END*/
