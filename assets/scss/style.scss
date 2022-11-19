@@ -12,6 +12,8 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,181,1) 43%, rgba(79,203,228,1) 100%);
 }
 
 /* GLOBAL END*/
@@ -20,6 +22,19 @@
 /* MAIN START*/
 
 .main {
+    padding: 40px;
+    border: 2px solid $blue;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    &_section{
+        font-family: $mainFont;
+        font-size: 18px;
+        color: #fff;
+    }
     &__btn {
         padding: 15px 10px;
         background-color: red;
@@ -36,6 +51,13 @@
     }
 
 }
+.mun{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 420px;
+}
 
 /* MAIN END*/
 
@@ -46,7 +68,7 @@
     position: absolute;
     left: 0;
     top: -100%;
-    visibility:hidden;
+    visibility: hidden;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.331);
     display: flex;
@@ -54,16 +76,17 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    visibility:hidden;
+    visibility: hidden;
     opacity: 0;
     transition: all 0.5s ease;
 
     &_main {
         width: 30%;
         height: 45%;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.17);
         padding: 15px;
         border-radius: 5px;
+
         &-nav {
             display: flex;
             justify-content: space-between;
@@ -73,7 +96,8 @@
                 font-family: $mainFont;
                 font-size: 20px;
             }
-            & button{
+
+            & button {
                 border: none;
                 background-color: transparent;
             }
@@ -101,15 +125,18 @@
         }
     }
 }
-.block{
+
+.block {
     position: absolute;
     top: 0;
     opacity: 1;
     visibility: visible;
 }
+
 .d-none {
     display: none;
 }
+
 .email {
     margin-bottom: 40px;
     display: flex;
@@ -118,7 +145,7 @@
 
     & p {
         font-size: 15px;
-        color: rgb(153, 153, 153);
+        color: rgb(255, 250, 250);
     }
 
     & label {
@@ -129,9 +156,15 @@
     & input {
         outline: none;
         padding: 5px;
-        border: 1px solid $black;
+        // border: 1px solid $black;
         border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        color: #fff;
     }
+}
+
+.red {
+    border: 2px solid $red
 }
 
 /* MAINS END*/

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.min.css">
+    <link rel="stylesheet" href="./assets/scss/style.css">
     <title>Document</title>
 </head>
 
@@ -14,33 +14,48 @@
         <!-- MAIN START -->
 
         <main class="main">
-            <button  class="main__btn">See Modal with Form</button>
+            <div class="main_nav">
+                <button class="main__btn">See Modal with Form</button>
+            </div>
+            <div class="main_section">
+                <h4>Email: <span class="email_text"></span></h4>
+                <h4>Password: <span class="password_text"></span></h4>
+                <h4>Confirm Password: <span class="ConfirmPassword_text"></span></h4>
+            </div>
         </main>
         <main class="mains">
             <div class="mains_main">
                 <div class="mains_main-nav">
                     <h3>Create Account</h3>
                     <button class="mains__btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(103, 103, 103, 1);transform: msFilter"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(103, 103, 103, 1);transform: msFilter">
+                            <path
+                                d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
+                            </path>
+                        </svg>
                     </button>
                 </div>
-                <div class="email">
-                    <label for="email">Email address</label>
-                    <input type="email" name="email" id="email" placeholder="Enter email">
-                    <p>You information is safe with us</p>
-                </div>
-                <div class="email">
-                    <label for="pasword">Password</label>
-                    <input type="password" placeholder="Password" id="password">
-                </div>
-                <div class="email">
-                    <label for="pasword">Confirm Password</label>
-                    <input type="password" placeholder="Confirm Password" id="ConfirmPassword">
-                </div>
-                <div class="mains_main-btn">
-                    <input type="button" class="mains_main-btn_btns" value="Submit">
-
-                </div>
+                <form action="" class="form">
+                    <div class="email">
+                        <label for="email">Email address</label>
+                        <input type="email"  type="reset" name="email" class="emails input" placeholder="Enter email" >
+    
+                        <p>You information is safe with us</p>
+                    </div>
+                    <div class="email">
+                        <label for="pasword">Password</label>
+                        <input type="password" placeholder="Passwords" class="passwords input">
+                    </div>
+                    <div class="email">
+                        <label for="pasword">Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password" class="ConfirmPasswords input">
+                    </div>
+                    <div class="mains_main-btn">
+                        <input type="button" class="mains_main-btn_btns" value="Submit" >
+    
+                    </div>
+                </form>
             </div>
         </main>
 
