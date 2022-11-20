@@ -25,55 +25,91 @@ const emailText = document.querySelector('.email_text')
 const passwordText = document.querySelector('.password_text')
 const ConfirmPasswordText = document.querySelector('.ConfirmPassword_text')
 const submitBTn = document.querySelector('.mains_main-btn_btns')
+const email = document.querySelector('.emails').value
+const passwords = document.querySelector('.passwords').value
+const ConfirmPassword = document.querySelector('.ConfirmPasswords').value
+
+function showError(input, message) {
+    input.classList.add('red')
+    input.nextElementSibling.innerText = message
+}
+
+function showSuccsess(input) {
+    input.classList.remove('red')
+    input.nextElementSibling.innerText = ''
+}
+
+function checkRequired(inputs) {
+    const arr = []
+    inputs.forEach((input) => {
+        if (input.value.trim() === '') {
+            showError(input, 'To`ldirilishi shart!')
+            arr.push(true)
+        } else {
+            showSuccsess(input)
+            arr.push(false)
+        }
+    })
+
+    return !arr.every((element) => !element)
+}
+
+function checkIsEmail(email) {
+    const re =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (!re.test(email.value)) {
+        showError(email, 'Emailni togri kiriting!')
+        return true
+    } else {
+        showSuccsess(email)
+        return false
+    }
+}
+
+function checkPasswordLength(password, min) {
+    if (password.value.length < min) {
+        showError(password, `Parol ${min} kichik`)
+        return true
+    } else {
+        return false
+    }
+}
+
+function checkPasswordSame(password, confirmPassword) {
+    if (password.value !== confirmPassword.value) {
+        showError(confirmPassword, 'Bir hil emas!')
+        return true
+    } else {
+        return false
+    }
+}
+function success(email, password, confirmPassword) {
+
+    emailText.innerText = email
+    passwordText.innerText = password
+    ConfirmPasswordText.innerText = confirmPassword
+    
+}
 
 submitBTn.addEventListener('click', function (event) {
     event.preventDefault()
-    const email = document.querySelector('.emails').value
-    const passwords = document.querySelector('.passwords').value
-    const ConfirmPassword = document.querySelector('.ConfirmPasswords').value
+
     const emails = document.querySelector('.emails')
     const passwordss = document.querySelector('.passwords')
     const ConfirmPasswords = document.querySelector('.ConfirmPasswords')
     const main = document.querySelector('.main')
-    console.log(input);
-    const naramlizaData ={
-        email,
-        passwords,
-        ConfirmPassword,
+    const errors = [
+        checkRequired([emails, passwordss, ConfirmPasswords]),
+        checkIsEmail(emails),
+        checkPasswordLength(passwordss, 4),
+        checkPasswordSame(passwordss, ConfirmPasswords),
+    ]
 
+    if (errors.every((item) => !item)) {
+        success(emails.value, passwordss.value, ConfirmPasswords.value)
     }
-    for (const key in values) {
-        if (naramlizaData[key] === values[key]) {
-            errorList[key]= true            
-        }else{
-            errorList[key]= false
-        }
-    }
-    const errorList = {
-        email: false,
-        password: false,
-        ConfirmPassword:false,
-    }
-    const values = {
-        email: '',
-        password: '',
-        ConfirmPassword:'',
-    }
-    if (Object.values(errorList).every((item) => !item)) {
-        main.classList.add('mun')
-        emailText.innerText = email
-        passwordText.innerText = passwords
-        ConfirmPasswordText.innerText = ConfirmPassword
-        mains.classList.remove('block')
-
-    } else {
-        for (const item in errorList) {
-            if (errorList[item]) {
-                document.querySelector(`${item}`).classList.add('red')                
-            }
-        }
-    }
-    
+    mains.classList.remove('block')
+    main.classList.add('num')
 })
 
 // if (passwords === ConfirmPassword) {

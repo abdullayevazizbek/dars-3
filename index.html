@@ -38,21 +38,25 @@
                 </div>
                 <form action="" class="form">
                     <div class="email">
-                        <label for="email">Email address</label>
+                        <label for="email">Email address <span class="required">*</span></label>
                         <input type="email"  type="reset" name="email" class="emails input" placeholder="Enter email" >
-    
-                        <p>You information is safe with us</p>
+                        <span class="form__group-error"></span>
                     </div>
                     <div class="email">
-                        <label for="pasword">Password</label>
+                        <label for="pasword">Password <span class="required">*</span></label>
                         <input type="password" placeholder="Passwords" class="passwords input">
+                        <span class="form__group-error"></span>
+
                     </div>
                     <div class="email">
-                        <label for="pasword">Confirm Password</label>
+                        <label for="pasword">Confirm Password <span class="required">*</span></label>
                         <input type="password" placeholder="Confirm Password" class="ConfirmPasswords input">
+                        <span class="form__group-error"></span>
+
                     </div>
                     <div class="mains_main-btn">
                         <input type="button" class="mains_main-btn_btns" value="Submit" >
+                        <span class="form__group-error"></span>
     
                     </div>
                 </form>
