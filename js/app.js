@@ -19,6 +19,9 @@ mainsBtn.addEventListener('click', function () {
     mains.classList.remove('block')
 })
 
+mains.addEventListener('click', function () {
+    mains.classList.remove('block')
+})
 // INPUT START
 
 const emailText = document.querySelector('.email_text')
