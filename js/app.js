@@ -88,7 +88,7 @@ function success(email, password, confirmPassword) {
     emailText.innerText = email
     passwordText.innerText = password
     ConfirmPasswordText.innerText = confirmPassword
-    
+
 }
 
 submitBTn.addEventListener('click', function (event) {
@@ -107,8 +107,9 @@ submitBTn.addEventListener('click', function (event) {
 
     if (errors.every((item) => !item)) {
         success(emails.value, passwordss.value, ConfirmPasswords.value)
+        mains.classList.remove('block')
+
     }
-    mains.classList.remove('block')
     main.classList.add('num')
 })
 
